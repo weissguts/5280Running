@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RacesComponent} from '../races/races.component';
 
 @Component({
   selector: 'dh-sidenav',
