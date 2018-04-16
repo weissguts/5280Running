@@ -17,10 +17,10 @@ import {Routes, RouterModule} from '@angular/router';
 import { FriendFinderComponent } from './friend-finder/friend-finder.component';
 import { HomeComponent } from './home/home.component';
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'friends', component: FriendFinderComponent}
-];
+// const appRoutes: Routes = [
+//   {path: '', component: HomeComponent},
+//   {path: 'friends', component: FriendFinderComponent}
+// ];
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule, MatToolbarModule, MatSidenavModule, BrowserAnimationsModule, MatListModule, MatExpansionModule,
-    MatFormFieldModule, RouterModule.forRoot(appRoutes), HttpClientModule
+    MatFormFieldModule, HttpClientModule
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
