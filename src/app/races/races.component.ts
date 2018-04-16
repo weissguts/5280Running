@@ -7,12 +7,6 @@ import { RacesService } from './races.service';
   styleUrls: ['./races.component.scss']
 })
 export class RacesComponent implements OnInit {
-  showRaces() {
-    this.RacesService.getRace()
-      .subscribe(data => this.race = {
-
-    }
-  }
   constructor() { }
 
   ngOnInit() {
