@@ -1,6 +1,6 @@
 import {Race, RacesService} from './races.service';
 
-export class RacesModel {
+export class RacesComponent {
   error: any;
   headers: string[];
   race: Race;

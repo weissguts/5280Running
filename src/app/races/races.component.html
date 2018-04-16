@@ -1,10 +1,9 @@
-<mat-accordion *ngFor="let race of races">
+<mat-accordion>
 
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <p>{{ race.date }}, {{ race.raceName }}, {{ race.distance }}, {{ race.location }}</p>
       </mat-panel-title>
       <mat-panel-description>
         Click for more information. {{panelOpenState ? '' : ''}}
@@ -19,4 +18,6 @@
   </mat-accordion>
 
   <mat-divider></mat-divider>
+
+<button (click)="showRaceReponse()">getResponse</button>
 
