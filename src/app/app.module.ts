@@ -17,7 +17,7 @@ import { FriendFinderComponent } from './friend-finder/friend-finder.component';
 
 const appRoutes: Routes = [
   {path: '', component: SidenavComponent},
-  {path: '/friends', component: FriendFinderComponent}
+  {path: 'friends', component: FriendFinderComponent}
 ];
 
 @NgModule({
