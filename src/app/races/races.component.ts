@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Race } from './races.model';
+import { RacesService } from './races.service';
 
 @Component({
   selector: 'dh-races',
@@ -8,10 +7,12 @@ import { Race } from './races.model';
   styleUrls: ['./races.component.scss']
 })
 export class RacesComponent implements OnInit {
-  races: Race[] = [
-    new Race('01/01/01', 'TestRace', '5k', 'Denver, CO'),
-    new Race('02/01/01', 'TestTWO', '10k', 'Englewood, CO')
-  ];
+  showRaces() {
+    this.RacesService.getRace()
+      .subscribe(data => this.race = {
+
+    }
+  }
   constructor() { }
 
   ngOnInit() {
