@@ -21,23 +21,12 @@ export class RacesComponent {
       data => this.race = {...data},
       error => this.error = error
     );
+    console.log(this.race + ' Test');
   }
-
-  showRace_v1() {
-    this.racesService.getRace_1().subscribe(data => this.race = {
-      activeApiURL: data['activeApiURL'],
-      textfile: data['textfile']
-    });
-  }
-
-  showRace_v2() {
-    this.racesService.getRace().subscribe(data => this.race = {...data});
-  }
-
   showRaceReponse() {
     this.racesService.getRaceResponse()
     .subscribe(resp => {
-    console.log({resp});
+    console.log(resp.body);
     });
   }
 
