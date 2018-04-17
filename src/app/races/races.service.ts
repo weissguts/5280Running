@@ -35,8 +35,9 @@ export class RacesService {
   }
   getRaceResponse(): Observable<HttpResponse<Race>> {
     return this.http.get<Race>(
-      this.activeApiURL, {observe: 'response'});
+      this.activeApiURL, { observe: 'response' });
   }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
