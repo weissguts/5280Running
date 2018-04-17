@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    //change this to build into express app public folder. create new app.
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

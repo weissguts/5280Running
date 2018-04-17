@@ -12,7 +12,6 @@ export class RacesComponent {
   error: any;
   headers: string[];
   race: Race;
-
   constructor(private racesService: RacesService) {
   }
 

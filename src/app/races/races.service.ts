@@ -12,7 +12,7 @@ export interface Race {
 }
 
 // tslint:disable-next-line:max-line-length
-const activeApiURL = 'http://api.amp.active.com/v2/search/?radius=50&city=denver&current_page=1&per_page=10&sort=distance&topic=running&start_date=2018-04-17..2018-12-31&exclude_children=true&api_key=t773nv58p6ysdh4bvn5yavvp';
+const activeApiURL = 'https://cors-anywhere.herokuapp.com/http://api.amp.active.com/v2/search/?radius=50&city=denver&current_page=1&per_page=10&sort=distance&topic=running&start_date=2018-04-17..2018-12-31&exclude_children=true&api_key=t773nv58p6ysdh4bvn5yavvp';
 
 @Injectable()
 export class RacesService {
