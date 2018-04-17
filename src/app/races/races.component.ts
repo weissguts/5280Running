@@ -37,7 +37,7 @@ export class RacesComponent {
   showRaceReponse() {
     this.racesService.getRaceResponse()
     .subscribe(resp => {
-    console.log({... resp});
+    console.log({resp});
     });
   }
 
