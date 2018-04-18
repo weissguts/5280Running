@@ -1,5 +1,4 @@
 var request = require("request");
-var fs = require("fs");
 
 var options = { method: 'GET',
     url: 'http://api.amp.active.com/v2/search/',
@@ -14,13 +13,13 @@ var options = { method: 'GET',
             exclude_children: 'true',
             api_key: 't773nv58p6ysdh4bvn5yavvp' },
     headers:
-        { 'Postman-Token': '6a3004cf-0656-4321-a1cc-816af38a7815',
-            'Cache-Control': 'no-cache' }, json: true };
+        { 'Postman-Token': '929d5e5d-48f5-4ae7-a15d-6933d07229ca',
+            'Cache-Control': 'no-cache' } };
 
+request(options, function (error, response, body) {
+    if (error) throw new Error(error);
 
-
-let fileStream = fs.createWriteStream('./models/races.json');
-request(options).pipe(fileStream);
-
+    console.log(body);
+});
 
 

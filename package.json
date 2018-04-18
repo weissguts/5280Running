@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/weissguts/5280Running#readme",
   "dependencies": {
+    "JSON": "^1.0.0",
     "app": "^0.1.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
