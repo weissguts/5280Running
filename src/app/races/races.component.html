@@ -1,23 +1,58 @@
 <mat-accordion>
-
   <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
+                       (closed)="panelOpenState = false"
+  id="expacPan">
     <mat-expansion-panel-header>
-      <mat-panel-title>
-      </mat-panel-title>
-      <mat-panel-description>
-        Click for more information. {{panelOpenState ? '' : ''}}
-      </mat-panel-description>
+      <div class="container">
+        <div class="row">
+          <h6><span id="noHeader">No</span>:</h6>
+          <mat-panel-title>
+            <h5 id="noMain">&nbsp;1.</h5>
+          </mat-panel-title>
+
+          <h6><span id="dateHeader">Date</span>:</h6>
+          <mat-panel-title>
+            <h5 id="dateMain">&nbsp;01/01/1901</h5>
+          </mat-panel-title>
+
+          <h6><span id="raceHeader">Race</span>:</h6>
+          <mat-panel-title>
+            <h5 id="raceMain">&nbsp;Puppy Run</h5>
+          </mat-panel-title>
+
+          <h6><span id="distanceHeader">Distance</span>:</h6>
+          <mat-panel-title>
+            <h5 id="distanceMain">&nbsp;5k</h5>
+          </mat-panel-title>
+
+          <h6><span id="locationHeader">Location</span>:</h6>
+          <mat-panel-title>
+            <h5 id="locationMain">&nbsp;Denver, CO</h5>
+          </mat-panel-title>
+
+          <mat-panel-description>
+            Click for more information. {{panelOpenState ? '' : ''}}
+          </mat-panel-description>
+
+        </div>
+      </div>
     </mat-expansion-panel-header>
-    <p>Race Description</p>
+    <mat-panel-title>
+      What is Lorem Ipsum?
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </mat-panel-title>
+    <br>
+    <mat-panel-title>
+      <h6>Event Website</h6>
+      <a href="https://www.google.com" target="_blank"> Hyper Link</a>
+    </mat-panel-title>
   </mat-expansion-panel>
 
 
-<mat-divider></mat-divider>
-
-  </mat-accordion>
-
   <mat-divider></mat-divider>
 
-<button (click)="showRaceReponse()">getResponse</button>
+</mat-accordion>
 
+<mat-divider></mat-divider>
+
+<button (click)="showRaceReponse()">getResponse</button>

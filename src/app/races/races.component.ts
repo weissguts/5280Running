@@ -24,10 +24,9 @@ export class RacesComponent {
   }
   showRaceReponse() {
     this.racesService.getRaceResponse()
-    .subscribe(resp => {
-    console.log(resp.body);
-    });
+      .subscribe(resp => {
+        console.log(resp.body);
+      });
   }
 
 }
-
