@@ -23,3 +23,4 @@ request(options, function (error, response, body) {
 });
 
 
+request.get(options).pipe(request.put('https://localhost:8080/api/races'));

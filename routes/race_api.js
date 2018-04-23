@@ -13,6 +13,4 @@ module.exports = function (app) {
     app.post("/api/races", function (req, res) {
         res.send(raceArray);
     })
-
-
 };
