@@ -20,6 +20,8 @@ export class RacesComponent {
       this.race = { ... resp.body};
     });
   }
+
+
 }
 
 // public date: string;

@@ -23,9 +23,20 @@ export class RacesComponent {
     console.log(this.race + ' Test');
   }
   showRaceReponse() {
+    var raceArray = [];
     this.racesService.getRaceResponse()
       .subscribe(resp => {
-        console.log(resp.body);
+        raceArray.push(resp.body);
+        for (let obj of raceArray) {
+          for (let i in obj) {
+            console.log(
+              "ID:", obj[i].id + ",",
+              "Date:", obj[i].activityStartDate + ",",
+              "RaceName:", obj[i].assetName + ",",
+              "Website:", obj[i].website + + ",");
+          }
+        }
+
       });
   }
 
