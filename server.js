@@ -10,7 +10,10 @@ var path = require("path");
 var PORT = process.env.PORT || 8080;
 // Sets up the Express app to handle data parsing
 app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.urlencoded({
+    limit: '50mb',
+    extended: true
+}));
 
 // ================================================================================
 // ROUTER
