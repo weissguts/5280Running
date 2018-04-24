@@ -17,24 +17,16 @@ export class RacesComponent {
   error: any;
   headers: string[];
   race: Race;
-  racesM: RacesModel[] = [
-    new RacesModel(this.id, this.date, this.raceName, this.website)
-  ];
+  racesM: string[];
   constructor(private racesService: RacesService) {
     var raceArray = [];
     this.racesService.getRaceResponse()
       .subscribe(resp => {
-        raceArray.push(resp.body);
-        for (let obj of raceArray) {
-          for (let i in obj) {
-            console.log(
-            this.id = obj[i].id,
-            this.date = obj[i].activityStartDate,
-            this.raceName = obj[i].assetName,
-            this.website = obj[i].website
-          )
-          }
-        }
+        // raceArray.push(resp.body);
+        // this.racesM = raceArray;
+        // console.log(this.racesM)
+        // return this.racesM;
+
       });
   }
 

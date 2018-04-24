@@ -1,23 +1,23 @@
 <mat-accordion>
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"
-  id="expacPan" *ngFor="let racesModel of racesM">
+  id="expacPan" *ngFor="let racesModel of this">
     <mat-expansion-panel-header>
       <div class="container">
         <div class="row">
           <h6><span id="noHeader">No</span>:</h6>
           <mat-panel-title>
-            <h5 id="noMain">&nbsp;{{this.id}}</h5>
+            <h5 id="noMain">&nbsp;{{racesModel.id}}</h5>
           </mat-panel-title>
 
           <h6><span id="dateHeader">Date</span>:</h6>
           <mat-panel-title>
-            <h5 id="dateMain">&nbsp;{{this.date}}</h5>
+            <h5 id="dateMain">&nbsp;{{racesModel.date}}</h5>
           </mat-panel-title>
 
           <h6><span id="raceHeader">Race</span>:</h6>
           <mat-panel-title>
-            <h5 id="raceMain">&nbsp;{{this.raceName}}</h5>
+            <h5 id="raceMain">&nbsp;{{racesModel.raceName}}</h5>
           </mat-panel-title>
 
           <!--<h6><span id="distanceHeader">Website</span>:</h6>-->

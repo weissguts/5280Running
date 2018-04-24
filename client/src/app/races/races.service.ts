@@ -23,8 +23,8 @@ export class RacesService {
       catchError(this.handleError)
     );
   }
-  getRaceResponse(): Observable<HttpResponse<Race>> {
-    return this.httpClient.get<Race>(
+  getRaceResponse(): Observable<HttpResponse<any[]>> {
+    return this.httpClient.get<any[]>(
       activeApiURL, {
         observe: 'response'
       });
