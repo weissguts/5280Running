@@ -15,14 +15,22 @@ var options = { method: 'GET',
         { 'Postman-Token': '380a9349-1215-489e-ac37-729da5c3b53f',
             'Cache-Control': 'no-cache' }, json: true };
 
-var raceArray = {};
+var raceArray = [];
 request(options, function (error, response, body) {
     if (error) throw new Error(error);
 
     var results = body.results;
+    var description = results.assetDescriptions;
     for(var i = 0; i < results.length; i++) {
-        raceArray["SalesEndDate "+ i ] = results[i].salesEndDate,
-        raceArray["registrationUrlAdr "+ i ] = results[i].registrationUrlAdr
+        raceArray.push({
+            "website": results[i].homePageUrlAdr,
+            "assetName": results[i].assetName,
+            "activityStartDate": results[i].activityStartDate,
+            "logoUrlAdr": results[i].logoUrlAdr,
+            "description": results[i].assetDescriptions,
+            "assetAttributes": results[i].assetAttributes,
+
+        });
     }
 
 });
