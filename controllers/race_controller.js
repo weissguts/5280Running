@@ -23,6 +23,7 @@ request(options, function (error, response, body) {
     var description = results.assetDescriptions;
     for(var i = 0; i < results.length; i++) {
         raceArray.push({
+            "id": i,
             "website": results[i].homePageUrlAdr,
             "assetName": results[i].assetName,
             "activityStartDate": results[i].activityStartDate,

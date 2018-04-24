@@ -12,7 +12,7 @@ export interface Race {
 }
 
 // tslint:disable-next-line:max-line-length
-const activeApiURL = '/api/races';
+const activeApiURL = 'http://localhost:8080/api/races';
 
 @Injectable()
 export class RacesService {
