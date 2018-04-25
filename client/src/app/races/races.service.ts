@@ -25,7 +25,7 @@ export interface IRace {
 }
 
 // tslint:disable-next-line:max-line-length
-const activeApiURL = '/api/races';
+const activeApiURL = 'https://running-201301.appspot.com/api/races';
 
 @Injectable()
 export class RacesService {
