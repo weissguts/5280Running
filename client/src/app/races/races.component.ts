@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Race, RacesService} from './races.service';
+import {Race, IRace, RacesService} from './races.service';
 import { HttpClient } from '@angular/common/http';
 import {RacesModel} from './races.model';
 
