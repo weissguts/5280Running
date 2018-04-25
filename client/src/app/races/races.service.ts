@@ -14,7 +14,7 @@ export interface Race {
   textfile: string;
 }
 
-interface IRace {
+export interface IRace {
   id: Number;
   activityStartDate: Date;
   assetAttributes: Array<any>;
@@ -25,7 +25,7 @@ interface IRace {
 }
 
 // tslint:disable-next-line:max-line-length
-const activeApiURL = 'http://localhost:8080/api/races';
+const activeApiURL = '/api/races';
 
 @Injectable()
 export class RacesService {

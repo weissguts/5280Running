@@ -16,6 +16,7 @@ app.use(express.urlencoded({
     limit: '50mb',
     extended: true
 }));
+app.use(express.static('./client/dist'))
 
 // ================================================================================
 // ROUTER

@@ -3,15 +3,6 @@ import {Race, RacesService} from './races.service';
 import { HttpClient } from '@angular/common/http';
 import {RacesModel} from './races.model';
 
-interface IRace {
-  id: Number;
-  activityStartDate: Date;
-  assetAttributes: Array<any>;
-  assetName: string;
-  description: Array<any>;
-  logoUrlAdr: string;
-  website: string;
-}
 
 @Component({
   selector: 'dh-races',
@@ -48,26 +39,26 @@ export class RacesComponent {
   //   );
   //   console.log(this.race + ' Test');
   // }
-  //
-  // showRaceReponse() {
-  //   var raceM = [];
-  //   var raceArray = [];
-  //   this.racesService.getRaceResponse()
-  //     .subscribe(resp => {
-  //       raceArray.push(resp.body);
-  //       for (let obj of raceArray) {
-  //         for (let i in obj) {
-  //           raceM.push({
-  //             "ID:": obj[i].id + ",",
-  //             "Date:": obj[i].activityStartDate,
-  //             "RaceName:": obj[i].assetName,
-  //             "Website:": obj[i].website
-  //           })
-  //         }
-  //         console.log(raceM);
-  //         return raceM;
-  //       }
-  //     });
-  // }
+
+  showRaceReponse() {
+    var raceM = [];
+    var raceArray = [];
+    this.racesService.getRaceResponse()
+      .subscribe(resp => {
+        raceArray.push(resp.body);
+        for (let obj of raceArray) {
+          for (let i in obj) {
+            raceM.push({
+              "ID:": obj[i].id + ",",
+              "Date:": obj[i].activityStartDate,
+              "RaceName:": obj[i].assetName,
+              "Website:": obj[i].website
+            })
+          }
+          console.log(raceM);
+          return raceM;
+        }
+      });
+  }
 }
 
