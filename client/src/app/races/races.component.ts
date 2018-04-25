@@ -3,6 +3,16 @@ import {Race, RacesService} from './races.service';
 import { HttpClient } from '@angular/common/http';
 import {RacesModel} from './races.model';
 
+interface IRace {
+  id: Number;
+  activityStartDate: Date;
+  assetAttributes: Array<any>;
+  assetName: string;
+  description: Array<any>;
+  logoUrlAdr: string;
+  website: string;
+}
+
 @Component({
   selector: 'dh-races',
   templateUrl: './races.component.html',
@@ -13,16 +23,18 @@ export class RacesComponent {
   error: any;
   headers: string[];
   race: Race;
+  races: IRace[];
   raceM: RacesModel[] = [
     new RacesModel('1', 'Puppy Run', '01/01/1901', 'www.test.com')
   ];
+
+  raceMn: any[] = [];
 
   constructor(private racesService: RacesService) {
     var raceArray = [];
     this.racesService.getRaceResponse()
       .subscribe(resp => {
-        raceArray.push(resp.body);
-        this.raceM = raceArray;
+        this.races = resp.body;
         console.log(this.raceM);
       });
 

@@ -14,17 +14,24 @@ export interface Race {
   textfile: string;
 }
 
+interface IRace {
+  id: Number;
+  activityStartDate: Date;
+  assetAttributes: Array<any>;
+  assetName: string;
+  description: Array<any>;
+  logoUrlAdr: string;
+  website: string;
+}
+
 // tslint:disable-next-line:max-line-length
 const activeApiURL = 'http://localhost:8080/api/races';
 
 @Injectable()
 export class RacesService {
-  racesChanged = new Subject<RacesModel[]>();
-
-  private races: RacesModel[] = [
+   private races: RacesModel[] = [
     new RacesModel('2', 'Cat Run', '02/02/1902', 'www.test2.com')
   ];
-
 
   constructor(private httpClient: HttpClient) { }
   getRace() {
@@ -33,8 +40,8 @@ export class RacesService {
       catchError(this.handleError)
     );
   }
-  getRaceResponse(): Observable<HttpResponse<Race>> {
-    return this.httpClient.get<Race>(
+  getRaceResponse(): Observable<HttpResponse<Array<IRace>>> {
+    return this.httpClient.get<Array<IRace>>(
       activeApiURL, {
         observe: 'response'
       });
