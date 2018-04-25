@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { Subject } from 'rxjs/Subject';
 
 import { Observable } from 'rxjs/Observable';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
+import {RacesModel} from './races.model';
 
 export interface Race {
   activeApiURL: string;
@@ -17,6 +19,13 @@ const activeApiURL = 'http://localhost:8080/api/races';
 
 @Injectable()
 export class RacesService {
+  racesChanged = new Subject<RacesModel[]>();
+
+  private races: RacesModel[] = [
+    new RacesModel('2', 'Cat Run', '02/02/1902', 'www.test2.com')
+  ];
+
+
   constructor(private httpClient: HttpClient) { }
   getRace() {
     return this.httpClient.get(activeApiURL).pipe(
@@ -24,12 +33,19 @@ export class RacesService {
       catchError(this.handleError)
     );
   }
-  getRaceResponse(): Observable<HttpResponse<any[]>> {
-    return this.httpClient.get<any[]>(
+  getRaceResponse(): Observable<HttpResponse<Race>> {
+    return this.httpClient.get<Race>(
       activeApiURL, {
         observe: 'response'
       });
   }
+
+  // setRaces(races: RacesModel[]) {
+  //   this.races = races;
+  //   this.racesChanged.next(this.races.slice());
+  //   console.log(races);
+  //
+  // }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

@@ -17,6 +17,7 @@ import { RunningBuddyComponent } from './running-buddy/running-buddy.component';
 import {Routes, RouterModule} from '@angular/router';
 import { FriendFinderComponent } from './friend-finder/friend-finder.component';
 import { HomeComponent } from './home/home.component';
+import {RacesModel} from './races/races.model';
 
 // const appRoutes: Routes = [
 //   {path: '', component: HomeComponent},
