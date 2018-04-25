@@ -28,12 +28,13 @@ request(options, function (error, response, body) {
             "assetName": results[i].assetName,
             "activityStartDate": results[i].activityStartDate,
             "logoUrlAdr": results[i].logoUrlAdr,
-            "description": results[i].assetDescriptions,
+            "description": results[i].assetDescriptions[0].description,
             "assetAttributes": results[i].assetAttributes,
 
         });
     }
 
 });
+
 
 module.exports = raceArray;
