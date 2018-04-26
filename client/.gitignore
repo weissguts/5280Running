@@ -1,6 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-
+#Google
+service-account-key.json
 
 # dependencies
 /node_modules
