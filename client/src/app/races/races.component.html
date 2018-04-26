@@ -5,40 +5,54 @@
     <mat-expansion-panel-header class="expanHeaderCustom">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div>
+            <mat-panel-title>
+              <p><span id="raceHeader">Date</span>:</p>
+              <p id="raceMain">&nbsp;{{race.activityStartDate}}</p>
+            </mat-panel-title>
+          </div>
+
+<div class="spacer"></div>
+
+          <div class="col-md-6">
           <mat-panel-title>
-            <img src={{race.logoImage}} class="logoImage">
+            <p><span id="dateHeader">Race</span>:</p>
+            <p id="dateMain">&nbsp;{{race.assetName}}</p>
           </mat-panel-title>
           </div>
 
-          <div class="col-md-3">
-          <h6><span id="dateHeader">Race</span>:</h6>
-          <mat-panel-title>
-            <p id="dateMain">{{race.assetName}}</p>
-          </mat-panel-title>
+       <div class="spacer"></div>
+          <div>
+            <mat-panel-title>
+              <p><span id="distanceHeader">Distance</span>:</p>
+              <p id="distanceMain">&nbsp; 5k, 10k, Half-Mara</p>
+            </mat-panel-title>
           </div>
-          <span class="spacer"></span>
-
-          <div class="col-md-3">
-          <h6><span id="raceHeader">Date</span>:</h6>
-          <mat-panel-title>
-            <p id="raceMain">{{race.activityStartDate}}</p>
-          </mat-panel-title>
-          </div>
-          <span class="spacer"></span>
            {{panelOpenState ? '' : ''}}
         </div>
+
       </div>
     </mat-expansion-panel-header>
-    <mat-panel-title>
-      <h6>Event Website: </h6>
-      <a href={{race.website}} target="_blank" style="color: #FFFFFF">&nbsp; {{race.website}}</a>
-    </mat-panel-title>
+    <div class="row expac_panel">
+    <div class="col-md-3">
+      <mat-panel-title>
+        <img src={{race.logoImage}} class="logoImage">
+      </mat-panel-title>
+    </div>
     <br>
+      <div class="col-md-3">
     <mat-panel-title>
-      <h6>Area Location: </h6>
-      <span>{{race.placeName}}</span>
+      <h6>Website: </h6>
+      <a href={{race.website}} target="_blank" style="color: #FFFFFF"><span>{{race.website}}</span></a>
     </mat-panel-title>
+      </div>
+      <div>
+        <mat-panel-title>
+          <p><span id="webheader">Area:</span></p>
+          <p id="placeMain">&nbsp;{{race.placeName}}</p>
+        </mat-panel-title>
+      </div>
+    </div>
 
   </mat-expansion-panel>
 

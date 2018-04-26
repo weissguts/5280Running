@@ -12,13 +12,21 @@
 
 #dateMain {
   color: white;
-}
 
+}
+#webheader {
+  color: white;
+  text-decoration: underline;
+
+}
 #raceHeader {
   text-decoration: underline;
 }
 
 #raceMain {
+  color: white;
+}
+#placeMain {
   color: white;
 }
 
@@ -50,15 +58,24 @@
   height: 75px;
   margin-top: 1%;
   margin-bottom: 1%;
-  -webkit-box-shadow: -2px 1px 15px 0px #000000;
-  box-shadow: -2px 1px 15px 0px #000000;
+  -webkit-box-shadow: -7px 4px 9px 0px rgba(0,0,0,0.61);
+  box-shadow: -7px 4px 9px 0px rgba(0,0,0,0.61);
 
 }
 
 .expanHeaderCustom {
   height: 100% !important;
-  margin-top: 0.5%;
+  -webkit-box-shadow: -2px 1px 15px 0px #000000;
+  box-shadow: -2px 1px 15px 0px #000000;
+  background: #ff7043;
+  padding-top: 1%;
+  //margin-top: 0.5%;
 }
 .spacer {
   flex: 1 1 auto;
 }
+
+.expac_panel {
+  padding-top: 1%;
+}
+

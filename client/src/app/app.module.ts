@@ -22,7 +22,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { FriendFinderComponent } from './friend-finder/friend-finder.component';
 import { HomeComponent } from './home/home.component';
 import {RacesModel} from './races/races.model';
-import {HeaderModalComponent ,HeaderModalDialog} from './dialog-overview-example/headerModal.component';
+import {HeaderModalComponent ,HeaderModalDialog} from './headerModal/headerModal.component';
 import {MatNativeDateModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 
