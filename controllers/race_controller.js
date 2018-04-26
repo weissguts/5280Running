@@ -13,14 +13,13 @@ var options = { method: 'GET',
             api_key: 't773nv58p6ysdh4bvn5yavvp' },
     headers:
         { 'Postman-Token': '380a9349-1215-489e-ac37-729da5c3b53f',
-            'Cache-Control': 'no-cache' }, json: true };
+            'Cache-Control': 'no-cache' }, json: true};
 
 var raceArray = [];
 request(options, function (error, response, body) {
     if (error) throw new Error(error);
 
     var results = body.results;
-    var description = results.assetDescriptions;
     for(var i = 0; i < results.length; i++) {
         raceArray.push({
             "id": i,
@@ -30,6 +29,11 @@ request(options, function (error, response, body) {
             "logoUrlAdr": results[i].logoUrlAdr,
             "description": results[i].assetDescriptions[0].description,
             "assetAttributes": results[i].assetAttributes,
+            "placeName": results[i].place.placeName,
+
+
+
+
 
         });
     }

@@ -38,13 +38,16 @@
       </div>
     </mat-expansion-panel-header>
     <mat-panel-title>
-      {{race.description}}
+      <h6>Event Website: </h6>
+      <a href={{race.website}} target="_blank" style="color: #FFFFFF">&nbsp; {{race.website}}</a>
     </mat-panel-title>
     <br>
     <mat-panel-title>
-      <h6>Event Website</h6>
-      <a href="https://www.google.com" target="_blank"> Hyper Link</a>
+      <h6>Area Location: </h6>
+      <span>{{race.placeName}}</span>
+
     </mat-panel-title>
+
   </mat-expansion-panel>
 
 

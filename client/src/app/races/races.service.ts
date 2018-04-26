@@ -22,6 +22,7 @@ export interface IRace {
   description: Array<any>;
   logoUrlAdr: string;
   website: string;
+  placeName: string;
 }
 
 // tslint:disable-next-line:max-line-length
