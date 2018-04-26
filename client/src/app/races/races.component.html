@@ -1,39 +1,32 @@
 <mat-accordion>
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"
-  id="expacPan" *ngFor="let race of races">
+                       id="expacPan" *ngFor="let race of races">
     <mat-expansion-panel-header class="expanHeaderCustom">
       <div class="container">
         <div class="row">
-          <h6><span id="noHeader">No</span>:</h6>
+          <div class="col-md-3">
           <mat-panel-title>
-            <h5 id="noMain">&nbsp;{{race.id}}</h5>
+            <img src={{race.logoImage}} class="logoImage">
           </mat-panel-title>
+          </div>
 
-          <h6><span id="dateHeader">Date</span>:</h6>
+          <div class="col-md-3">
+          <h6><span id="dateHeader">Race</span>:</h6>
           <mat-panel-title>
-            <h5 id="dateMain">&nbsp;{{race.activityStartDate}}</h5>
+            <p id="dateMain">{{race.assetName}}</p>
           </mat-panel-title>
+          </div>
+          <span class="spacer"></span>
 
-          <h6><span id="raceHeader">Race</span>:</h6>
+          <div class="col-md-3">
+          <h6><span id="raceHeader">Date</span>:</h6>
           <mat-panel-title>
-            <h5 id="raceMain">&nbsp;{{race.assetName}}</h5>
+            <p id="raceMain">{{race.activityStartDate}}</p>
           </mat-panel-title>
-
-          <!--<h6><span id="distanceHeader">Website</span>:</h6>-->
-          <!--<mat-panel-title>-->
-            <!--<h5 id="distanceMain">&nbsp;{{this.website}}</h5>-->
-          <!--</mat-panel-title>-->
-
-          <!--<h6><span id="locationHeader">Location</span>:</h6>-->
-          <!--<mat-panel-title>-->
-            <!--<h5 id="locationMain">&nbsp;{{racesModel.location}}</h5>-->
-          <!--</mat-panel-title>-->
-
-          <mat-panel-description>
-            Click for more information. {{panelOpenState ? '' : ''}}
-          </mat-panel-description>
-
+          </div>
+          <span class="spacer"></span>
+           {{panelOpenState ? '' : ''}}
         </div>
       </div>
     </mat-expansion-panel-header>
@@ -46,16 +39,8 @@
       <h6>Area Location: </h6>
       <span>{{race.placeName}}</span>
     </mat-panel-title>
-    <mat-panel-title>
-      <div class="col-md-1">
-      <span>Image: </span> <img src={{race.logoImage}} class="logoImage">
-      </div>
-    </mat-panel-title>
-
-
 
   </mat-expansion-panel>
-
 
   <mat-divider></mat-divider>
 

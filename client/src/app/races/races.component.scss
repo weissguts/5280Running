@@ -46,6 +46,19 @@
 }
 
 .logoImage {
-  width: 150px;
+  width: 125px;
+  height: 75px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  -webkit-box-shadow: -2px 1px 15px 0px #000000;
+  box-shadow: -2px 1px 15px 0px #000000;
+
 }
 
+.expanHeaderCustom {
+  height: 100% !important;
+  margin-top: 0.5%;
+}
+.spacer {
+  flex: 1 1 auto;
+}
