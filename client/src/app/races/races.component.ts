@@ -26,7 +26,7 @@ export class RacesComponent {
     this.racesService.getRaceResponse()
       .subscribe(resp => {
         this.races = resp.body;
-        console.log(this.raceM);
+        console.log(this.races);
       });
 
 

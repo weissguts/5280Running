@@ -30,10 +30,7 @@ request(options, function (error, response, body) {
             "description": results[i].assetDescriptions[0].description,
             "assetAttributes": results[i].assetAttributes,
             "placeName": results[i].place.placeName,
-
-
-
-
+            "logoImage": results[i].logoUrlAdr,
 
         });
     }

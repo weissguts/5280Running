@@ -2,7 +2,7 @@
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"
   id="expacPan" *ngFor="let race of races">
-    <mat-expansion-panel-header>
+    <mat-expansion-panel-header class="expanHeaderCustom">
       <div class="container">
         <div class="row">
           <h6><span id="noHeader">No</span>:</h6>
@@ -45,8 +45,14 @@
     <mat-panel-title>
       <h6>Area Location: </h6>
       <span>{{race.placeName}}</span>
-
     </mat-panel-title>
+    <mat-panel-title>
+      <div class="col-md-1">
+      <span>Image: </span> <img src={{race.logoImage}} class="logoImage">
+      </div>
+    </mat-panel-title>
+
+
 
   </mat-expansion-panel>
 

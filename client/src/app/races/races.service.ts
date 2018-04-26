@@ -23,10 +23,11 @@ export interface IRace {
   logoUrlAdr: string;
   website: string;
   placeName: string;
+  logoImage: string;
 }
 
 // tslint:disable-next-line:max-line-length
-const activeApiURL = 'https://running-201301.appspot.com/api/races';
+const activeApiURL = 'http://localhost:8080/api/races';
 
 @Injectable()
 export class RacesService {
