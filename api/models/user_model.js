@@ -39,3 +39,5 @@ userSchema.methods.generateJwt = function() {
         exp: parseInt(expiry.getTime() / 1000),
     }, "abc123"); // Testing purposes
 };
+
+module.exports = mongoose.model('User', userSchema);

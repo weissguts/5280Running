@@ -8,7 +8,7 @@ var path = require("path");
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var passport = require('passport');
-
+var routesApi = require('./api/routes/user_routes');
 // Sets up the Express App
 
 // =============================================================
@@ -57,3 +57,5 @@ app.use(express.static('./client/dist'));
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
 });
+
+module.exports = app;

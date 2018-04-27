@@ -92,7 +92,7 @@ export class HeaderModalComponent {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`http://localhost8080:/api/${type}`, user);
+      base = this.http.post(`/api/${type}`, user);
     } else {
       base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
@@ -136,7 +136,7 @@ export class HeaderModalComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       this.register(result).subscribe(() => {
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/api/register');
       }, (err) => {
         console.error(err);
       });
