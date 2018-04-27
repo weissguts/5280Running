@@ -26,13 +26,29 @@ app.use(express.urlencoded({
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
-require("./models/db");
-require("./config/passport");
-require("./routes/race_routes")(app);
+require("./api/models/db");
+require("./api/config/passport");
+require("./api/routes/race_routes")(app);
 
-
-app.use(express.static('./client/dist'));
+//===================================================================
+// PASSPORT / Mongo
+// ==================================================================
 app.use(passport.initialize());
+app.use('./api', routesApi);
+// error handlers
+// Catch unauthorised errors
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+        res.status(401);
+        res.json({"message" : err.name + ": " + err.message});
+    }
+});
+
+// ===================================================================
+// Angular 5 Production Call
+// ===================================================================
+app.use(express.static('./client/dist'));
+
 
 // =============================================================================
 // LISTENER

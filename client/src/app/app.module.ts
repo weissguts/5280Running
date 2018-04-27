@@ -22,7 +22,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { FriendFinderComponent } from './friend-finder/friend-finder.component';
 import { HomeComponent } from './home/home.component';
 import {RacesModel} from './races/races.model';
-import {HeaderModalComponent ,HeaderModalDialog} from './headerModal/headerModal.component';
+import {HeaderModalComponent, HeaderModalDialog, HeaderModalDialogL} from './headerModal/headerModal.component';
 import {MatNativeDateModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 
@@ -41,15 +41,21 @@ import {MatInputModule} from '@angular/material';
     FriendFinderComponent,
     HomeComponent,
     HeaderModalComponent,
-    HeaderModalDialog
+    HeaderModalDialog,
+    HeaderModalDialogL
+
   ],
-  entryComponents: [HeaderModalComponent,HeaderModalDialog],
+  entryComponents: [HeaderModalComponent,HeaderModalDialog, HeaderModalDialogL],
   imports: [
     BrowserModule, MatToolbarModule, MatSidenavModule, BrowserAnimationsModule, MatListModule, MatExpansionModule,
-    MatFormFieldModule, HttpClientModule, MatDialogModule, FormsModule, ReactiveFormsModule, MatNativeDateModule, MatInputModule
-    // RouterModule.forRoot(appRoutes)
+    MatFormFieldModule, HttpClientModule, MatDialogModule, FormsModule, ReactiveFormsModule, MatNativeDateModule, MatInputModule,
+    RouterModule.forRoot(
+      [
+        { path: "", component: HeaderModalComponent}
+      ]
+    )
   ],
   providers: [],
-  bootstrap: [AppComponent, HeaderModalComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
