@@ -122,21 +122,23 @@ export class HeaderModalComponent {
     return this.request('get', 'profile');
   }
 
+
+  /**************************************Modal Methods**************************************************************/
+  /****************************************Register*************************************************************************/
   openDialogR(): void {
     let dialogRef = this.dialog.open(HeaderModalDialog, {
       width: '250px',
       data: {
         email: this.email,
         firstname: this.firstname,
-        lastname: this.lastname,
-        password: this.password,
-        zipcode: this.zipcode,
-        age: this.age}
+        password: this.password}
+
     });
+
 
     dialogRef.afterClosed().subscribe(result => {
       this.register(result).subscribe(() => {
-        this.router.navigateByUrl('/api/register');
+        this.router.navigateByUrl('/');
       }, (err) => {
         console.error(err);
       });
@@ -146,6 +148,9 @@ export class HeaderModalComponent {
 
     });
   }
+
+  /**************************************Modal Methods**************************************************************/
+  /****************************************Login*************************************************************************/
 
   openDialogL(): void {
     let dialogRef = this.dialog.open(HeaderModalDialog, {
