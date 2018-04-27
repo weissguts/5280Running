@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost:27017/meanAuth';
-if (process.env.NODE_ENV === 'production') {
-    dbURI = process.env.MONGOLAB_URI;
-}
+var dbURI = 'mongodb+srv://weissguts:MongoDUabc123@mean-6d3zs.mongodb.net/meanAuth';
+// if (process.env.NODE_ENV === 'production') {
+//     dbURI = process.env.MONGOLAB_URI;
+// }
 
 mongoose.connect(dbURI);
 
