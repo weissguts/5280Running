@@ -13,14 +13,14 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.register = function(req, res) {
     var user = new User();
-
-    user.name = req.body.name;
+    user.firstname = req.body.firstname;
     user.email = req.body.email;
 
     user.setPassword(req.body.password);
-
+    console.log(user);
     user.save(function(err) {
         var token;
+        console.log(err);
         token = user.generateJwt();
         res.status(200);
         res.json({

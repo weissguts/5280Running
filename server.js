@@ -34,7 +34,7 @@ require("./api/routes/race_routes")(app);
 // PASSPORT / Mongo
 // ==================================================================
 app.use(passport.initialize());
-app.use('./api', routesApi);
+app.use('/api', routesApi);
 // error handlers
 // Catch unauthorised errors
 app.use(function (err, req, res, next) {

@@ -92,9 +92,9 @@ export class HeaderModalComponent {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`/api/${type}`, user);
+      base = this.http.post(`http://localhost:8080/api/${type}`, user);
     } else {
-      base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+      base = this.http.get(`http://localhost:8080/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
     const request = base.pipe(
@@ -131,6 +131,9 @@ export class HeaderModalComponent {
       data: {
         email: this.email,
         firstname: this.firstname,
+        lastname: this.lastname,
+        age: this.age,
+        zipcode: this.zipcode,
         password: this.password}
 
     });
