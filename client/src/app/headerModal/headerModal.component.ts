@@ -156,7 +156,7 @@ export class HeaderModalComponent {
   /****************************************Login*************************************************************************/
 
   openDialogL(): void {
-    let dialogRef = this.dialog.open(HeaderModalDialog, {
+    let dialogRef = this.dialog.open(HeaderModalDialogL, {
       width: '250px',
       data: {
         email: this.email,
@@ -164,6 +164,12 @@ export class HeaderModalComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.login(result).subscribe(() => {
+        this.router.navigateByUrl('/');
+      }, (err) => {
+        console.error(err);
+      });
+
       console.log('The dialog was closed');
       console.log(result);
 
@@ -196,7 +202,7 @@ export class HeaderModalDialog {
 export class HeaderModalDialogL {
 
   constructor(
-    public dialogRef: MatDialogRef<HeaderModalDialog>,
+    public dialogRef: MatDialogRef<HeaderModalDialogL>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {
