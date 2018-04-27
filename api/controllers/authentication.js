@@ -14,10 +14,12 @@ var sendJSONresponse = function(res, status, content) {
 module.exports.register = function(req, res) {
     var user = new User();
     user.firstname = req.body.firstname;
+    user.lastname = req.body.lastname;
+    user.age = req.body.age;
+    user.zipcode = req.body.zipcode;
     user.email = req.body.email;
-
     user.setPassword(req.body.password);
-    console.log(user);
+    
     user.save(function(err) {
         var token;
         console.log(err);

@@ -20,8 +20,8 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    firstname: {
-        type: String,
+    zipcode: {
+        type: Number,
         required: true
     },
     hash: String,
@@ -48,6 +48,9 @@ userSchema.methods.generateJwt = function() {
         _id: this._id,
         email: this.email,
         firstname: this.firstname,
+        lastname: this.lastname,
+        age: this.age,
+        zipcode: this.zipcode,
         exp: parseInt(expiry.getTime() / 1000),
     }, "abc123"); // Testing purposes
 };
