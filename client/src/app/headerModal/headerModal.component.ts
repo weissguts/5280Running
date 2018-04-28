@@ -31,7 +31,7 @@ export class HeaderModalComponent {
   /****************************************Register*************************************************************************/
 
   //Method to register user into Mongo database.
-  openDialogR(http, router, auth, dialog, login ): void {
+  openDialogR(): void {
     let dialogRef = this.dialog.open(HeaderModalDialog, {
       width: '250px',
       data: {
@@ -73,7 +73,7 @@ export class HeaderModalComponent {
   /****************************************Login*************************************************************************/
 
   //Method to check is user is logged into Mongo Database.
-  openDialogL(http, router, auth, dialog, login ): void {
+  openDialogL(): void {
     let dialogRef = this.dialog.open(HeaderModalDialogL, {
       width: '250px',
       data: {

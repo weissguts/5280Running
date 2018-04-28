@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
       this.firstname = user.firstname;
       this.lastname = user.lastname;
 
-
       //Checks to see if email has a value. If true then relay message to header component.
       if (this.email != undefined) {
         console.log("Hey", user);
