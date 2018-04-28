@@ -32,13 +32,7 @@ export class RacesComponent {
 
   }
 
-  // showRace() {
-  //   this.racesService.getRace().subscribe(
-  //     data => this.race = {...data},
-  //     error => this.error = error
-  //   );
-  //   console.log(this.race + ' Test');
-  // }
+
 
   showRaceReponse() {
     var raceM = [];

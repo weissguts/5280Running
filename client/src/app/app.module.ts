@@ -25,12 +25,13 @@ import {RacesModel} from './races/races.model';
 import {HeaderModalComponent, HeaderModalDialog, HeaderModalDialogL} from './headerModal/headerModal.component';
 import {MatNativeDateModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
+import {AuthenticationService} from './authentication.service';
+import {LoginService} from './LoginService';
 
-// const appRoutes: Routes = [
-//   {path: '', component: HomeComponent},
-//   {path: 'friends', component: FriendFinderComponent}
-// ];
-
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  // { path: 'register', component: HeaderModalDialog },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,20 +43,16 @@ import {MatInputModule} from '@angular/material';
     HomeComponent,
     HeaderModalComponent,
     HeaderModalDialog,
-    HeaderModalDialogL
+    HeaderModalDialogL,
 
   ],
   entryComponents: [HeaderModalComponent,HeaderModalDialog, HeaderModalDialogL],
   imports: [
     BrowserModule, MatToolbarModule, MatSidenavModule, BrowserAnimationsModule, MatListModule, MatExpansionModule,
     MatFormFieldModule, HttpClientModule, MatDialogModule, FormsModule, ReactiveFormsModule, MatNativeDateModule, MatInputModule,
-    RouterModule.forRoot(
-      [
-        { path: "", component: HeaderModalComponent}
-      ]
-    )
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthenticationService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

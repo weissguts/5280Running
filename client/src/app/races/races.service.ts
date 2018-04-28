@@ -31,10 +31,6 @@ const activeApiURL = 'https://running-201301.appspot.com/api/races';
 
 @Injectable()
 export class RacesService {
-   private races: RacesModel[] = [
-    new RacesModel('2', 'Cat Run', '02/02/1902', 'www.test2.com')
-  ];
-
   constructor(private httpClient: HttpClient) { }
   getRace() {
     return this.httpClient.get(activeApiURL).pipe(
@@ -49,12 +45,6 @@ export class RacesService {
       });
   }
 
-  // setRaces(races: RacesModel[]) {
-  //   this.races = races;
-  //   this.racesChanged.next(this.races.slice());
-  //   console.log(races);
-  //
-  // }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
