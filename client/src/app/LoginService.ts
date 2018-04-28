@@ -11,13 +11,11 @@ export class LoginService {
   public user$: Observable<{}> = this._user.asObservable();
 
   public constructor() {
-
   }
 
   public onLogin(user: UserDetails): void {
     this.setToStorage(user);
     this._user.next(user);
-
   }
 
   public getFromStorage(): UserDetails {

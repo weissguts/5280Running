@@ -16,9 +16,13 @@
         <span>Running Buddy Finder</span>
       <span class="spacer"></span>
 
+      <!--Checks to see if message is null. If true will display Login/Register buttons.
+      Else will display welcome message------------------------------------------------------>
+      <div *ngIf="message == null">
       <dh-headerModal></dh-headerModal>
+      </div>
+      {{message}}
 
-      {{ message }}
 
   </mat-toolbar-row>
 

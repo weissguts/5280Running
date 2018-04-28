@@ -29,6 +29,8 @@ export class HeaderModalComponent {
 
   /**************************************Modal Methods**************************************************************/
   /****************************************Register*************************************************************************/
+
+  //Method to register user into Mongo database.
   openDialogR(http, router, auth, dialog, login ): void {
     let dialogRef = this.dialog.open(HeaderModalDialog, {
       width: '250px',
@@ -44,19 +46,19 @@ export class HeaderModalComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       this.auth.register(result).subscribe(() => {
-
         localStorage.setItem('currentUser', JSON.stringify({
-
             email: this.email,
             firstname: this.firstname,
             lastname: this.lastname,
             age: this.age,
             zipcode: this.zipcode,
             password: this.password
-
         }));
 
+        this.login.onLogin(result);
+
         this.router.navigateByUrl('/home');
+
       }, (err) => {
         console.error(err);
       });
@@ -70,6 +72,7 @@ export class HeaderModalComponent {
   /**************************************Modal Methods**************************************************************/
   /****************************************Login*************************************************************************/
 
+  //Method to check is user is logged into Mongo Database.
   openDialogL(http, router, auth, dialog, login ): void {
     let dialogRef = this.dialog.open(HeaderModalDialogL, {
       width: '250px',
@@ -79,10 +82,8 @@ export class HeaderModalComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.auth.login(result).subscribe(() => {
-        console.log(result);
-
-        this.login.onLogin(result);
+      this.auth.login(result).subscribe((user) => {
+        this.login.onLogin(user.user);
         this.router.navigateByUrl('/home');
 
       }, (err) => {

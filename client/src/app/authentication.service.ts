@@ -104,7 +104,9 @@ export class AuthenticationService {
   }
 
   public login(user: TokenPayload): Observable<any> {
-    return this.request('post', 'login', user);
+    var userData = this.request('post', 'login', user);
+    console.log(userData);
+    return userData;
   }
 
   public profile(): Observable<any> {
