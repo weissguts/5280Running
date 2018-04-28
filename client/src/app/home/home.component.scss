@@ -1,7 +1,20 @@
-footer {
-  width: 100%;
+.footerT {
   background: #0C2340;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF5F0A, #FF5F0A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF5F0A, #FF5F0A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #003B3E, #FF5F0A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #003B3E, #FF5F0A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-shadow: -2px 1px 15px 0px #000000;
+  box-shadow: -2px 1px 15px 0px #000000;
+  color: #FFFFFF;
+}
 
+.copy {
+  font-size: small !important;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.footI {
+  width: 35%;
 }

@@ -3,6 +3,7 @@ import {LoginService} from '../LoginService';
 import {UserDetails} from '../authentication.service';
 
 
+
 @Component({
   selector: 'dh-header',
   templateUrl: './header.component.html',

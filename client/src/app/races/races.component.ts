@@ -21,17 +21,16 @@ export class RacesComponent {
 
   raceMn: any[] = [];
 
+
   constructor(private racesService: RacesService) {
+
     var raceArray = [];
     this.racesService.getRaceResponse()
       .subscribe(resp => {
         this.races = resp.body;
         console.log(this.races);
       });
-
-
   }
-
 
 
   showRaceReponse() {
@@ -54,5 +53,9 @@ export class RacesComponent {
         }
       });
   }
-}
 
+
+  ngOnInit() {
+  }
+
+}

@@ -57,7 +57,7 @@ export class HeaderModalComponent {
 
         this.login.onLogin(result);
 
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/');
 
       }, (err) => {
         console.error(err);
@@ -84,7 +84,7 @@ export class HeaderModalComponent {
     dialogRef.afterClosed().subscribe(result => {
       this.auth.login(result).subscribe((user) => {
         this.login.onLogin(user.user);
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/');
 
       }, (err) => {
         console.error(err);
