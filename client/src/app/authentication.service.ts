@@ -81,9 +81,9 @@ export class AuthenticationService {
     let base;
 
     if (method === 'post') {
-      base = this.http.post(`http://localhost:8080/api/${type}`, user);
+      base = this.http.post(`https://running-201301.appspot.com/api/${type}`, user);
     } else {
-      base = this.http.get(`https://localhost:8080/api/${type}`, {headers: {Authorization: `Bearer ${this.getToken()}`}});
+      base = this.http.get(`https://running-201301.appspot.com/api/${type}`, {headers: {Authorization: `Bearer ${this.getToken()}`}});
     }
 
     const request = base.pipe(
